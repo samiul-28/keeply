@@ -281,3 +281,131 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 184ms (Views: 56.9ms | ActiveRecord: 43.9ms | Allocations: 11584)
 
 
+Started GET "/articles/2" for 127.0.0.1 at 2024-04-22 13:00:26 +0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 2865)
+Completed 200 OK in 91ms (Views: 30.9ms | ActiveRecord: 23.7ms | Allocations: 7787)
+
+
+Started GET "/articles" for 127.0.0.1 at 2024-04-22 13:00:29 +0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 1718)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 1809)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.4ms | Allocations: 2108)
+
+
+  
+ActionView::Template::Error (undefined method `article_path' for #<ActionView::Base:0x00000000014be0>):
+    3: <ul>
+    4:     <% @articles.each do |article| %>
+    5:         <li>
+    6:             <%= link_to article.title, article %>
+    7:         </li>
+    8:     <% end %>
+    9: </ul>
+  
+app/views/articles/index.html.erb:6
+app/views/articles/index.html.erb:4
+Started GET "/articles" for 127.0.0.1 at 2024-04-22 13:00:55 +0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 38.8ms | Allocations: 4113)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 4205)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 13.3ms | Allocations: 5643)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article_path' for #<ActionView::Base:0x000000000181c8>):
+    3: <ul>
+    4:     <% @articles.each do |article| %>
+    5:         <li>
+    6:             <%= link_to article.title, article_path %>
+    7:         </li>
+    8:     <% end %>
+    9: </ul>
+  
+app/views/articles/index.html.erb:6
+app/views/articles/index.html.erb:4
+Started GET "/articles" for 127.0.0.1 at 2024-04-22 13:01:28 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 137.5ms | Allocations: 13738)
+  Rendered layout layouts/application.html.erb (Duration: 141.4ms | Allocations: 13864)
+Completed 500 Internal Server Error in 427ms (ActiveRecord: 37.8ms | Allocations: 23670)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article_path' for #<ActionView::Base:0x0000000000ade8>):
+    3: <ul>
+    4:     <% @articles.each do |article| %>
+    5:         <li>
+    6:             <%= link_to article.title, article_path %>
+    7:         </li>
+    8:     <% end %>
+    9: </ul>
+  
+app/views/articles/index.html.erb:6
+app/views/articles/index.html.erb:4
+Started GET "/articles" for 127.0.0.1 at 2024-04-22 13:02:29 +0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 45.4ms | Allocations: 4158)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 4250)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 13.4ms | Allocations: 5691)
+
+
+  
+ActionView::Template::Error (undefined method `article_path' for #<ActionView::Base:0x0000000000e470>):
+    3: <ul>
+    4:     <% @articles.each do |article| %>
+    5:         <li>
+    6:             <%= link_to article.title, article %>
+    7:         </li>
+    8:     <% end %>
+    9: </ul>
+  
+app/views/articles/index.html.erb:6
+app/views/articles/index.html.erb:4
+Started GET "/articles" for 127.0.0.1 at 2024-04-22 13:08:22 +0600
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (4.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (Duration: 50.1ms | Allocations: 4068)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 4160)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 14.7ms | Allocations: 5599)
+
+
+  
+ActionView::Template::Error (undefined method `article_path' for #<ActionView::Base:0x00000000011a58>):
+    3: <ul>
+    4:     <% @articles.each do |article| %>
+    5:         <li>
+    6:             <a href="<%= article_path(article)%>">
+    7:             <% article.title %>
+    8:             </a>
+    9:         </li>
+  
+app/views/articles/index.html.erb:6
+app/views/articles/index.html.erb:4
