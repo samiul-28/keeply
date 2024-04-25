@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_052210) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_25_055629) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,6 +19,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_052210) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "news_headline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "weekly_newsbook"
   end
 
   create_table "products", force: :cascade do |t|
